@@ -1,0 +1,322 @@
+/*
+ * defaults.gradle
+ *
+ * In the defaults you can configure your default values. All entries below has
+ * been marked as comment and the value contains the default value. To overwrite
+ * simple comment out and set your preferred value.
+ *
+ * The method setCommonGradleProperty simplifies the setting. Addtitional it logs
+ * also the change.
+ */
+
+
+/*
+   In the common-gradle-build\gradle\build-elements\base\defaults.gradle you can find 
+   more values, which can be overwritten if needed. The most relevant are listed here.
+   The template folder is optional.
+   
+   structure of the repository:
+      gradle
+      gradle/defaults.gradle
+      (gradle/template/) <- optional
+  
+ */
+
+
+/***************************************************************************************
+ * gradle cache and home properties file
+ ***************************************************************************************/
+//setCommonGradleProperty("commonGradleBuildHomeGitUrl", "your-git-project-where-you-have-defined-your-defaults")
+//setCommonGradleProperty("commonGradleBuildHomeVersionFileUrl", "version-file-of-the-git-project-where-you-have-defined-your-defaults")
+//setCommonGradleProperty("commonGradleBuildCustomConfigName", "Custom Config")
+
+
+/***************************************************************************************
+ * to reference to a specific version of the common gradle build. 
+ * empty commonGradleBuildReleaseVersion means just use the newest version (default)
+ ***************************************************************************************/
+//setCommonGradleProperty("commonGradleBuildReleasesPreRelease", false)
+//setCommonGradleProperty("commonGradleBuildReleaseVersion", "")
+
+
+/***************************************************************************************
+ * reference the license always global
+ ***************************************************************************************/
+setCommonGradleProperty("licenseFile", "$commonGradleBuildHome/$licenseFilename")
+
+
+/***************************************************************************************
+ * common project files
+ ***************************************************************************************/
+//setCommonGradleProperty("includeReadmeFile", false)
+//setCommonGradleProperty("includeLicenseFile", true)
+
+//setCommonGradleProperty("createChangelogFile", false)
+//setCommonGradleProperty("includeChangelogFile", false)
+
+
+/***************************************************************************************
+ * view init settings
+ ***************************************************************************************/
+//setCommonGradleProperty("initShowJava", true)
+//setCommonGradleProperty("initShowRuntime", false)
+//setCommonGradleProperty("initShowPath", true)
+//setCommonGradleProperty("initShowTempPath", false)
+//setCommonGradleProperty("initShowScm", true)
+//setCommonGradleProperty("initScmForNewProjects", true)
+//setCommonGradleProperty("initScmWithNewFiles", true)
+//setCommonGradleProperty("initCheckstyle", true)
+//setCommonGradleProperty("initShowGradle", true)
+//setCommonGradleProperty("installGradleWrapper", true)
+
+
+/***************************************************************************************
+ * show created artefacts
+ ***************************************************************************************/
+//setCommonGradleProperty("showCreatedArtefacts", true)
+
+
+/***************************************************************************************
+ * project basic settings
+ ***************************************************************************************/
+//setCommonGradleProperty("licenseOrganisation", "your-organisation-name")
+//setCommonGradleProperty("licenseText", "MIT License: https://mit-license.org")
+//setCommonGradleProperty("licenseUrl", "https://mit-license.org")
+
+
+/***************************************************************************************
+ * compile settings
+ ***************************************************************************************/
+//setCommonGradleProperty("sourceCompatibility", JavaVersion.VERSION_1_8)
+//setCommonGradleProperty("targetCompatibility", JavaVersion.VERSION_1_8)
+//setCommonGradleProperty("fileEncoding", "UTF-8")
+//setCommonGradleProperty("compileJavaHome", "")
+
+
+/***************************************************************************************
+ * release settings
+ ***************************************************************************************/
+//setCommonGradleProperty("releaseBaseDirectory", "")
+//setCommonGradleProperty("commonGradleBuildValidateReleaseArtefact", true)
+//setCommonGradleProperty("commonGradleBuildSupportSnapshotHandling", true)
+//setCommonGradleProperty("commonGradleBuildReleaseBranch", "master")
+
+
+/***************************************************************************************
+ * repository settings
+ ***************************************************************************************/
+setCommonGradleProperty("commonGradleBuildReleasePublish", false)
+//setCommonGradleProperty("allowMavenCentralRepository", true)
+//setCommonGradleProperty("allowGoogleRepository", true)
+//setCommonGradleProperty("allowJCenterRepository", true)
+//setCommonGradleProperty("mavenPublishUrl", "https://your-publish-repository-url")
+//setCommonGradleProperty("mavenRepositoryUrl", "https://your-repository-url")
+//setCommonGradleProperty("allowMavenRepository", true)
+//setCommonGradleProperty("mavenSnapshotPublishUrl", "https://your-snapshot-publish-repository-url")
+//setCommonGradleProperty("mavenSnapshotRepositoryUrl", "https://your-snapshot-repository-url")
+//setCommonGradleProperty("allowMavenSnapshotRepository", true)
+
+// docker repository
+//setCommonGradleProperty("dockerRepositoryHost", "https://hub.docker.com")
+//setCommonGradleProperty("dockerTagPrefix", "hub.docker.com")
+//setCommonGradleProperty("dockerSnapshotRepositoryHost", "")
+//setCommonGradleProperty("dockerSnapshotTagPrefix", "")
+
+// npm repository
+//setCommonGradleProperty("nodeRegistry", "https://registry.npmjs.org/")
+
+
+/***************************************************************************************
+ * testing
+ ***************************************************************************************/
+//setCommonGradleProperty("initTesting", true)
+//setCommonGradleProperty("useJUnit", true)
+//setCommonGradleProperty("testDependencyVersion", "5.6.2")
+//setCommonGradleProperty("testImplementationDependency", "junit:junit:${testDependencyVersion}")
+//setCommonGradleProperty("testRuntimeOnlyDependency", "junit:junit:${testDependencyVersion}")
+
+
+/***************************************************************************************
+ * code quality: checkstyle
+ ***************************************************************************************/
+//setCommonGradleProperty("checkstyleToolVersion", '8.27')
+//setCommonGradleProperty("checkstyleMaxWarnings", 0)
+//setCommonGradleProperty("checkstyleXMLReport", false)
+//setCommonGradleProperty("checkstyleHTMLReport", true)
+//setCommonGradleProperty("checkstyleConfigurationPath", "${configDirectory}/checkstyle")
+//setCommonGradleProperty("checkstyleConfiguration", "${checkstyleConfigurationPath}/checkstyle.xml")
+setCommonGradleProperty("projectIndividualCheckstyleConfiguration", false)
+
+
+/***************************************************************************************
+ * test coverage: jacoco
+ ***************************************************************************************/
+//setCommonGradleProperty("jacocoToolDefaultVersion", '0.8.5')
+//setCommonGradleProperty("jacocoXMLReport", false)
+//setCommonGradleProperty("jacocoCSVReport", false)
+//setCommonGradleProperty("jacocoHTMLReport", true)
+
+
+/***************************************************************************************
+ * resource bundle
+ ***************************************************************************************/
+//setCommonGradleProperty("excelFileEncoding", "Cp1252")
+//setCommonGradleProperty("referenceSheetName", "")
+//setCommonGradleProperty("referenceSheetHasNoSubFolder", "false")
+
+
+/***************************************************************************************
+ * quarkus plugin version
+ ***************************************************************************************/
+//setCommonGradleProperty("quarkusPluginVersion", '1.10.5.Final')
+
+// readiness and liveness
+//setCommonGradleProperty("kubernetesReadinessFailureThreshold", 3)
+//setCommonGradleProperty("kubernetesReadinessScheme", "HTTP")
+//setCommonGradleProperty("kubernetesReadinessInitialDelaySeconds", 0)
+//setCommonGradleProperty("kubernetesReadinessPeriodSeconds", 30)
+//setCommonGradleProperty("kubernetesReadinessSuccessThreshold", 1)
+//setCommonGradleProperty("kubernetesReadinessTimeoutSeconds", 10)
+//setCommonGradleProperty("kubernetesLivenessFailureThreshold", project.getProperty('kubernetesReadinessFailureThreshold'))
+//setCommonGradleProperty("kubernetesLivenessScheme", project.getProperty('kubernetesReadinessScheme'))
+//setCommonGradleProperty("kubernetesLivenessInitialDelaySeconds", project.getProperty('kubernetesReadinessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesLivenessPeriodSeconds", project.getProperty('kubernetesReadinessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesLivenessSuccessThreshold", project.getProperty('kubernetesReadinessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesLivenessTimeoutSeconds", project.getProperty('kubernetesReadinessTimeoutSeconds'))
+
+//setCommonGradleProperty("kubernetesQuarkusReadinessCheckPath", "${kubernetesUrlRootPath}/health/ready")
+//setCommonGradleProperty("kubernetesQuarkusReadinessFailureThreshold", project.getProperty('kubernetesReadinessFailureThreshold'))
+//setCommonGradleProperty("kubernetesQuarkusReadinessScheme", project.getProperty('kubernetesReadinessScheme'))
+//setCommonGradleProperty("kubernetesQuarkusReadinessInitialDelaySeconds", project.getProperty('kubernetesReadinessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesQuarkusReadinessPeriodSeconds", project.getProperty('kubernetesReadinessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesQuarkusReadinessSuccessThreshold", project.getProperty('kubernetesReadinessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesQuarkusReadinessTimeoutSeconds", project.getProperty('kubernetesReadinessTimeoutSeconds'))
+//setCommonGradleProperty("kubernetesQuarkusLivenessCheckPath", "${kubernetesUrlRootPath}/health/live")
+//setCommonGradleProperty("kubernetesQuarkusLivenessFailureThreshold", project.getProperty('kubernetesLivenessFailureThreshold'))
+//setCommonGradleProperty("kubernetesQuarkusLivenessScheme", project.getProperty('kubernetesLivenessScheme'))
+//setCommonGradleProperty("kubernetesQuarkusLivenessInitialDelaySeconds", project.getProperty('kubernetesLivenessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesQuarkusLivenessPeriodSeconds", project.getProperty('kubernetesLivenessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesQuarkusLivenessSuccessThreshold", project.getProperty('kubernetesLivenessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesQuarkusLivenessTimeoutSeconds", project.getProperty('kubernetesLivenessTimeoutSeconds'))
+
+//setCommonGradleProperty("kubernetesNodeReadinessCheckPath", "/index.html")
+//setCommonGradleProperty("kubernetesNodeReadinessFailureThreshold", project.getProperty('kubernetesReadinessFailureThreshold'))
+//setCommonGradleProperty("kubernetesNodeReadinessScheme", project.getProperty('kubernetesReadinessScheme'))
+//setCommonGradleProperty("kubernetesNodeReadinessInitialDelaySeconds", project.getProperty('kubernetesReadinessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesNodeReadinessPeriodSeconds", project.getProperty('kubernetesReadinessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesNodeReadinessSuccessThreshold", project.getProperty('kubernetesReadinessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesNodeReadinessTimeoutSeconds", project.getProperty('kubernetesReadinessTimeoutSeconds'))
+//setCommonGradleProperty("kubernetesNodeLivenessCheckPath", project.getProperty('kubernetesNodeReadinessCheckPath'))
+//setCommonGradleProperty("kubernetesNodeLivenessFailureThreshold", project.getProperty('kubernetesLivenessFailureThreshold'))
+//setCommonGradleProperty("kubernetesNodeLivenessScheme", project.getProperty('kubernetesLivenessScheme'))
+//setCommonGradleProperty("kubernetesNodeLivenessInitialDelaySeconds", project.getProperty('kubernetesLivenessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesNodeLivenessPeriodSeconds", project.getProperty('kubernetesLivenessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesNodeLivenessSuccessThreshold", project.getProperty('kubernetesLivenessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesNodeLivenessTimeoutSeconds", project.getProperty('kubernetesLivenessTimeoutSeconds'))
+
+//setCommonGradleProperty("kubernetesIdmReadinessCheckPath", "${kubernetesIdmAdminUrlPath}master/console/")
+//setCommonGradleProperty("kubernetesIdmReadinessFailureThreshold", project.getProperty('kubernetesReadinessFailureThreshold'))
+//setCommonGradleProperty("kubernetesIdmReadinessScheme", project.getProperty('kubernetesReadinessScheme'))
+//setCommonGradleProperty("kubernetesIdmReadinessInitialDelaySeconds", project.getProperty('kubernetesReadinessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesIdmReadinessPeriodSeconds", project.getProperty('kubernetesReadinessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesIdmReadinessSuccessThreshold", project.getProperty('kubernetesReadinessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesIdmReadinessTimeoutSeconds", project.getProperty('kubernetesReadinessTimeoutSeconds'))
+//setCommonGradleProperty("kubernetesIdmLivenessCheckPath", project.getProperty('kubernetesIdmReadinessCheckPath'))
+//setCommonGradleProperty("kubernetesIdmLivenessFailureThreshold", project.getProperty('kubernetesLivenessFailureThreshold'))
+//setCommonGradleProperty("kubernetesIdmLivenessScheme", project.getProperty('kubernetesLivenessScheme'))
+//setCommonGradleProperty("kubernetesIdmLivenessInitialDelaySeconds", project.getProperty('kubernetesLivenessInitialDelaySeconds'))
+//setCommonGradleProperty("kubernetesIdmLivenessPeriodSeconds", project.getProperty('kubernetesLivenessPeriodSeconds'))
+//setCommonGradleProperty("kubernetesIdmLivenessSuccessThreshold", project.getProperty('kubernetesLivenessSuccessThreshold'))
+//setCommonGradleProperty("kubernetesIdmLivenessTimeoutSeconds", project.getProperty('kubernetesLivenessTimeoutSeconds'))
+
+
+/***************************************************************************************
+ * node plugin version
+ ***************************************************************************************/
+//setCommonGradleProperty("nodePluginVersion", '2.2.4')
+
+
+/***************************************************************************************
+ * openapi plugin version
+ ***************************************************************************************/
+//setCommonGradleProperty("openapiPluginVersion", '4.3.1')
+
+
+/***************************************************************************************
+ * nuxt
+ ***************************************************************************************/
+//setCommonGradleProperty("forceStaticTarget", false)
+
+
+/***************************************************************************************
+ * define docker settings
+ ***************************************************************************************/
+//setCommonGradleProperty("projectIndividualDockerfie", true)
+//setCommonGradleProperty("createProjectIndividualDockerfie", true)
+
+
+/***************************************************************************************
+ * define kubernetes settings 
+ ***************************************************************************************/
+//setCommonGradleProperty("kubernetesSupport", false)
+//setCommonGradleProperty("kubernetesApplicationHost", "${rootProject.name}.local")
+//setCommonGradleProperty("kubernetesReplicas", "2")
+//setCommonGradleProperty("kubernetesUrlRootPath", "/api")
+//setCommonGradleProperty("kubernetesUrlPath", "${kubernetesUrlRootPath}/${rootProject.name}")
+//setCommonGradleProperty("kubernetesSupportIngressNginx", true)
+//setCommonGradleProperty("kubernetesControllerImage", "networking.k8s.io/v1beta1")
+//setCommonGradleProperty("kubernetesApplicationOIDCClientId", "services")
+//setCommonGradleProperty("kubernetesApplicationOIDCPublicKey", "")
+
+//setCommonGradleProperty("kubernetesSupportDatabase", true)
+//setCommonGradleProperty("kubernetesDatabaseType", "postgresql")
+//setCommonGradleProperty("kubernetesDatabaseHost", "database")
+//setCommonGradleProperty("kubernetesDatabasePort", "5432")
+//setCommonGradleProperty("kubernetesDatabaseName", "${projectGroupId}".toString().replace(".", "-"))
+//setCommonGradleProperty("kubernetesDatabaseMaxConnections", "10")
+//setCommonGradleProperty("kubernetesDatabaseUrl", "jdbc:${kubernetesDatabaseType}://${kubernetesDatabaseHost}:${kubernetesDatabasePort}/${kubernetesDatabaseName}")
+//setCommonGradleProperty("kubernetesDatabaseServiceName", "database")
+//setCommonGradleProperty("kubernetesDatabaseImage", "postgres:10.5")
+//setCommonGradleProperty("kubernetesDatabaseStorage", "100Mi")
+ 
+//setCommonGradleProperty("kubernetesSupportIdm", true)
+//setCommonGradleProperty("kubernetesIdmImageVersion", "11.0.2")
+//setCommonGradleProperty("kubernetesIdmFrontendUrl", "http://app-${projectGroupId}.local/auth")
+//setCommonGradleProperty("kubernetesIdmPort", "8080")
+//setCommonGradleProperty("kubernetesIdmDatabase", "${kubernetesDatabaseName}_idm")
+//setCommonGradleProperty("kubernetesIdmDatabaseHost", "${kubernetesDatabaseHost}")
+//setCommonGradleProperty("kubernetesIdmDatabasePort", "${kubernetesDatabasePort}")
+//setCommonGradleProperty("kubernetesIdmDatabaseVendor", "postgres")
+//setCommonGradleProperty("kubernetesIdmImage", "quay.io/keycloak/keycloak:${kubernetesIdmImageVersion}")
+//setCommonGradleProperty("kubernetesIdmLogLevel", "INFO")
+//setCommonGradleProperty("kubernetesIdmAddressForwarding", "true")
+
+
+/***************************************************************************************
+ * gradle jvm arguments
+ ***************************************************************************************/
+//setCommonGradleProperty("gradlePropertiesJvmArgs", "-Xmx1g -XX:MaxHeapSize=1g -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=${fileEncoding}")
+//setCommonGradleProperty("gradlePropertiesLogLevel", "lifecycle")
+//setCommonGradleProperty("gradlePropertiesLogLevel", "quiet")
+
+
+/***************************************************************************************
+ * set project validation patterns
+ ***************************************************************************************/
+//setCommonGradleProperty("projectNameRegularExpressionPattern", '^[a-zA-Z0-9\\-]+$')
+//setCommonGradleProperty("projectGroupIdRegularExpressionPattern", '^[a-zA-Z0-9\\.]+$')
+//setCommonGradleProperty("projectComponentIdRegularExpressionPattern", '^[a-zA-Z0-9\\-]+$')
+//setCommonGradleProperty("projectComponentIdIsPartOfProjectName", true)
+//setCommonGradleProperty("projectComponentIdSeparator", "-")
+//setCommonGradleProperty("projectRootPackageNamePrefix", "my.packageroot")
+//setCommonGradleProperty("validateRootFiles", true)
+//setCommonGradleProperty("validateRootDirectories", true)
+//setCommonGradleProperty("validateProjectNameAndFolder", false)
+
+
+/***************************************************************************************
+ * allowedMainDirectories & allowedMainFiles: the function addCommonGradlePropertyList
+ * can be used for extending the list. Below there are some samples.
+ ***************************************************************************************/
+//addCommonGradlePropertyList("allowedMainDirectories", "$rootDirectory/my-folder")
+//addCommonGradlePropertyList("allowedMainFiles", "$rootDirectory/my-text-file.txt")

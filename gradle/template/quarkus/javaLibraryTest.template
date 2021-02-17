@@ -1,0 +1,45 @@
+/*
+ * @@fileName@@
+ *
+ * Copyright by @@LICENSE_ORGANISATION@@, all rights reserved.
+ * @@LICENSE@@
+ */
+
+package @@packageName@@;
+
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import io.quarkus.test.junit.QuarkusTest;
+import org.junit.jupiter.api.Test;
+
+
+/**
+ * @@className@@.
+ *
+ * <p>! This is just a sample please remove it. !</p>
+ */
+@QuarkusTest
+public class @@className@@ {
+    /**
+     * Test @@classNameUnderTest@@ method.
+     */
+    @Test void testHelloEndpoint() {
+        given()
+          .when().get("/hello")
+          .then()
+             .statusCode(200)
+             .body(is("hello"));
+    }
+    
+    
+    /**
+     * Test Version.
+     */
+    @Test void testVersion() {
+        assertEquals(Version.VERSION, Version.getVersion());
+        new Version();
+        Version.main(new String[]{});
+    }
+}
