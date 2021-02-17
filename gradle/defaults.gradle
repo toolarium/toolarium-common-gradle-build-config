@@ -26,9 +26,9 @@
 /***************************************************************************************
  * gradle cache and home properties file
  ***************************************************************************************/
-//setCommonGradleProperty("commonGradleBuildHomeGitUrl", "your-git-project-where-you-have-defined-your-defaults")
-//setCommonGradleProperty("commonGradleBuildHomeVersionFileUrl", "version-file-of-the-git-project-where-you-have-defined-your-defaults")
-//setCommonGradleProperty("commonGradleBuildCustomConfigName", "Custom Config")
+setCommonGradleProperty("commonGradleBuildHomeGitUrl", "https://github.com/toolarium/toolarium-common-gradle-build-config.git")
+setCommonGradleProperty("commonGradleBuildHomeVersionFileUrl", "https://raw.githubusercontent.com/toolarium/toolarium-common-gradle-build-config/master/VERSION")
+setCommonGradleProperty("commonGradleBuildCustomConfigName", "Toolarium Config")
 
 
 /***************************************************************************************
@@ -79,9 +79,9 @@ setCommonGradleProperty("licenseFile", "$commonGradleBuildHome/$licenseFilename"
 /***************************************************************************************
  * project basic settings
  ***************************************************************************************/
-//setCommonGradleProperty("licenseOrganisation", "your-organisation-name")
-//setCommonGradleProperty("licenseText", "MIT License: https://mit-license.org")
-//setCommonGradleProperty("licenseUrl", "https://mit-license.org")
+setCommonGradleProperty("licenseOrganisation", "toolarium")
+setCommonGradleProperty("licenseText", "")
+setCommonGradleProperty("licenseUrl", "https://github.com/toolarium")
 
 
 /***************************************************************************************
@@ -245,14 +245,14 @@ setCommonGradleProperty("projectIndividualCheckstyleConfiguration", false)
 /***************************************************************************************
  * nuxt
  ***************************************************************************************/
-//setCommonGradleProperty("forceStaticTarget", false)
+setCommonGradleProperty("forceStaticTarget", true)
 
 
 /***************************************************************************************
  * define docker settings
  ***************************************************************************************/
 //setCommonGradleProperty("projectIndividualDockerfie", true)
-//setCommonGradleProperty("createProjectIndividualDockerfie", true)
+setCommonGradleProperty("createProjectIndividualDockerfie", false)
 
 
 /***************************************************************************************
