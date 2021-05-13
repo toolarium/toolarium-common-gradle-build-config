@@ -239,7 +239,7 @@ setCommonGradleProperty("projectIndividualCheckstyleConfiguration", false)
 /***************************************************************************************
  * openapi plugin version
  ***************************************************************************************/
-//setCommonGradleProperty("openapiPluginVersion", '4.3.1')
+//setCommonGradleProperty("openapiPluginVersion", '5.0.0')
 
 
 /***************************************************************************************
@@ -264,6 +264,7 @@ setCommonGradleProperty("createProjectIndividualDockerfie", false)
 //setCommonGradleProperty("kubernetesUrlRootPath", "/api")
 //setCommonGradleProperty("kubernetesUrlPath", "${kubernetesUrlRootPath}/${rootProject.name}")
 //setCommonGradleProperty("kubernetesSupportIngressNginx", true)
+//setCommonGradleProperty("kubernetesIngressProxyBodySize", "10m") 
 //setCommonGradleProperty("kubernetesControllerImage", "networking.k8s.io/v1beta1")
 //setCommonGradleProperty("kubernetesApplicationOIDCClientId", "services")
 //setCommonGradleProperty("kubernetesApplicationOIDCPublicKey", "")
