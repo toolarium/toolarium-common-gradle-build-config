@@ -31,10 +31,10 @@ if ("${projectType}".toString().equals("kubernetes-product")) {
                 outputFile.append("ENV_APP_KEY=" + readPublicKeyFromFile(project.getProperty("publicKeyFilename")) + NELINE)
 
                 if (project.hasProperty("privateKeyFilename") && new File(project.getProperty("privateKeyFilename")).exists()) {
-                    def hash = signMessage(project.getProperty("privateKeyFilename"), productEnvironmentInformation, messageDigestSignAlgorithm)
-                    outputFile.append("FP_APP_SIGN={" + messageDigestSignAlgorithm + "}" + hash + NELINE)
-                    def result = verifyMessage(project.getProperty("publicKeyFilename"), productEnvironmentInformation, hash)
-                    printInfo "verified: $result"
+                    def hash = hash(project.getProperty("privateKeyFilename"), productEnvironmentInformation)
+                    outputFile.append("ENV_APP_SIGN=" + hash + NELINE)
+                    def result = verifyMessageHash(project.getProperty("publicKeyFilename"), productEnvironmentInformation, hash)
+                    logInfo "verified: $result"
                 }
             }
         }

@@ -44,9 +44,9 @@ setCommonGradleProperty("commonGradleBuildCustomConfigName", "Toolarium Config")
  ***************************************************************************************/
 setCommonGradleProperty("licenseFile", "$commonGradleBuildHome/$licenseFilename")
 
+// signature keys
 setCommonGradleProperty("publicKeyFilename", "${commonGradleBuildHome}/conf/security/publickey.pem")
 setCommonGradleProperty("privateKeyFilename", "${gradleHome}/privatekey.key")
-setCommonGradleProperty("messageDigestSignAlgorithm", "SHA-256")
 
 
 /***************************************************************************************
