@@ -14,3 +14,29 @@
 /***************************************************************************************
  * Define own tasks or extend
  ***************************************************************************************/
+
+
+/***************************************************************************************
+ * Add to every kubernetes artefact common environment variables
+ ***************************************************************************************/
+if ("${projectType}".toString().equals("kubernetes-product")) {
+    processKubernetesDependencies {
+        doFirst {
+            mkdir "${gradleBuildDirectory}/${kubernetesProductEnvironmentVariablePath}"
+            def outputFile = new File("$kubernetesProductEnvironmentVariableFilename");
+            def productEnvironmentInformation = "${rootProject.name}|${productName}|${project.version}|${productOrganisation}|${copyrightText}|" + createHash(12)
+            outputFile.append("ENV_INFORMATION=" + encodeBase64(productEnvironmentInformation).toString() + NELINE)
+
+            if (project.hasProperty("publicKeyFilename") && new File(project.getProperty("publicKeyFilename")).exists()) {
+                outputFile.append("ENV_APP_KEY=" + readPublicKeyFromFile(project.getProperty("publicKeyFilename")) + NELINE)
+
+                if (project.hasProperty("privateKeyFilename") && new File(project.getProperty("privateKeyFilename")).exists()) {
+                    def hash = signMessage(project.getProperty("privateKeyFilename"), productEnvironmentInformation, messageDigestSignAlgorithm)
+                    outputFile.append("FP_APP_SIGN={" + messageDigestSignAlgorithm + "}" + hash + NELINE)
+                    def result = verifyMessage(project.getProperty("publicKeyFilename"), productEnvironmentInformation, hash)
+                    printInfo "verified: $result"
+                }
+            }
+        }
+    }
+}
