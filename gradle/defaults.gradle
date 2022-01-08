@@ -163,7 +163,7 @@ setCommonGradleProperty("commonGradleBuildReleasePublish", false)
  ***************************************************************************************/
 setCommonGradleProperty("dependencyTextReport", false)
 setCommonGradleProperty("dependencyHTMLReport", true)
-setCommonGradleProperty("dependencyCheckPreparedDatabaseArchiveFile", "${commonGradleBuildHome}/dependency-check/dependency-check-data.zip")
+setCommonGradleProperty("dependencyCheckPreparedDatabaseArchiveFile", "${commonGradleBuildHome}/conf/dependency-check/dependency-check-data.zip")
 //setCommonGradleProperty("dependencyCheckPreparedDatabaseArchiveUrl", "")
 
 
