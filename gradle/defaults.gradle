@@ -40,13 +40,17 @@ setCommonGradleProperty("commonGradleBuildCustomConfigName", "Toolarium Config")
 
 
 /***************************************************************************************
- * reference the license always global
+ * set organization specific settings
  ***************************************************************************************/
-setCommonGradleProperty("licenseFile", "$commonGradleBuildHome/$licenseFilename")
-
 // signature keys
 setCommonGradleProperty("publicKeyFilename", "${commonGradleBuildHome}/conf/security/publickey.pem")
 setCommonGradleProperty("privateKeyFilename", "${gradleHome}/privatekey.key")
+
+
+/***************************************************************************************
+ * reference the license always global
+ ***************************************************************************************/
+setCommonGradleProperty("licenseFile", "$commonGradleBuildHome/$licenseFilename")
 
 
 /***************************************************************************************
@@ -55,8 +59,22 @@ setCommonGradleProperty("privateKeyFilename", "${gradleHome}/privatekey.key")
 //setCommonGradleProperty("includeReadmeFile", false)
 //setCommonGradleProperty("includeLicenseFile", true)
 
-//setCommonGradleProperty("createChangelogFile", false)
-//setCommonGradleProperty("includeChangelogFile", false)
+//setCommonGradleProperty("createChangelogFile", true)
+//setCommonGradleProperty("includeChangelogFile", true)
+//setCommonGradleProperty("validateChangelogFile", true)
+//setCommonGradleProperty("changelogDescription", "" + NELINE
+//															 + "All notable changes to this project will be documented in this file." + NELINE
+//															 + "" + NELINE
+//															 + "The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)," + NELINE
+//															 + "and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).")
+//setCommonGradleProperty("changelogHeaderSeparator", '-');
+//setCommonGradleProperty("changelogItemSeparator", '-');
+//setCommonGradleProperty("changelogSupportUnreleased", true);
+//setCommonGradleProperty("changelogSupportBracketsAroundVersion", true);
+//setCommonGradleProperty("changelogSupportReleaseLink", true);
+//setCommonGradleProperty("changelogSupportReleaseInfo", true);
+//setCommonGradleProperty("changelogSupportLinkInDescription", true);
+//setCommonGradleProperty("changelogSupportIdListOnEndOfTheComment", true);
 
 
 /***************************************************************************************
@@ -91,8 +109,8 @@ setCommonGradleProperty("licenseUrl", "https://github.com/toolarium")
 /***************************************************************************************
  * compile settings
  ***************************************************************************************/
-//setCommonGradleProperty("sourceCompatibility", JavaVersion.VERSION_1_8)
-//setCommonGradleProperty("targetCompatibility", JavaVersion.VERSION_1_8)
+//setCommonGradleProperty("sourceCompatibility", JavaVersion.VERSION_11)
+//setCommonGradleProperty("targetCompatibility", JavaVersion.VERSION_11)
 //setCommonGradleProperty("fileEncoding", "UTF-8")
 //setCommonGradleProperty("compileJavaHome", "")
 
@@ -141,9 +159,18 @@ setCommonGradleProperty("commonGradleBuildReleasePublish", false)
 
 
 /***************************************************************************************
+ * dependency report
+ ***************************************************************************************/
+setCommonGradleProperty("dependencyTextReport", false)
+setCommonGradleProperty("dependencyHTMLReport", true)
+setCommonGradleProperty("dependencyCheckPreparedDatabaseArchiveFile", "${commonGradleBuildHome}/dependency-check/dependency-check-data.zip")
+//setCommonGradleProperty("dependencyCheckPreparedDatabaseArchiveUrl", "")
+
+
+/***************************************************************************************
  * code quality: checkstyle
  ***************************************************************************************/
-//setCommonGradleProperty("checkstyleToolVersion", '8.27')
+//setCommonGradleProperty("checkstyleToolVersion", '8.37')
 //setCommonGradleProperty("checkstyleMaxWarnings", 0)
 //setCommonGradleProperty("checkstyleXMLReport", false)
 //setCommonGradleProperty("checkstyleHTMLReport", true)
@@ -155,7 +182,7 @@ setCommonGradleProperty("projectIndividualCheckstyleConfiguration", false)
 /***************************************************************************************
  * test coverage: jacoco
  ***************************************************************************************/
-//setCommonGradleProperty("jacocoToolDefaultVersion", '0.8.5')
+//setCommonGradleProperty("jacocoToolDefaultVersion", '0.8.6')
 //setCommonGradleProperty("jacocoXMLReport", false)
 //setCommonGradleProperty("jacocoCSVReport", false)
 //setCommonGradleProperty("jacocoHTMLReport", true)
@@ -172,7 +199,7 @@ setCommonGradleProperty("projectIndividualCheckstyleConfiguration", false)
 /***************************************************************************************
  * quarkus plugin version
  ***************************************************************************************/
-//setCommonGradleProperty("quarkusPluginVersion", '1.10.5.Final')
+//setCommonGradleProperty("quarkusPluginVersion", '2.5.4.Final')
 
 // readiness and liveness
 //setCommonGradleProperty("kubernetesReadinessFailureThreshold", 3)
@@ -243,7 +270,10 @@ setCommonGradleProperty("projectIndividualCheckstyleConfiguration", false)
 /***************************************************************************************
  * openapi plugin version
  ***************************************************************************************/
-//setCommonGradleProperty("openapiPluginVersion", '5.0.0')
+//setCommonGradleProperty("openapiPluginVersion", '5.1.1')
+setCommonGradleProperty("openapiDateLibrary", "java8")
+//setCommonGradleProperty("openApiInputSourceFilePattern", '^' + "${rootProject.name}".replace("-api-spec", "").replace("-adapter-service", "").replace("-service", "") + '.*(service|service-adapter)-api.yaml$')
+setCommonGradleProperty("openApiAllowMultipleSourceFiles", "true");
 
 
 /***************************************************************************************
